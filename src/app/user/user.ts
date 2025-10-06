@@ -1,14 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { type UserInterface } from './user.model';
 
-// type UserObj = {
-//   id: string;
-//   avatar: string;
-//   name: string;
-// }
-
-
-
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -17,6 +9,7 @@ import { type UserInterface } from './user.model';
 })
 export class User {
   @Input({ required: true }) user!: UserInterface;
+  @Input({ required: true }) selected!: boolean;
   @Output() select = new EventEmitter<string>();
 
   get imagePath() {
